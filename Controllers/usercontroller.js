@@ -44,7 +44,11 @@ const updateUser = async (req, res) => {
 };
 
 const usersignIn = async (req, res) => {
-  res.send("User Signed in!");
+  const user = await req.body;
+  console.log(user);
+  res.status(200).json({
+    message: "User Signed In"
+  })
 };
 
 module.exports = {
